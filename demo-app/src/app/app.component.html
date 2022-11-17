@@ -1,0 +1,11 @@
+<h1> Hey !! I am reactive form !</h1>
+<h2>{{title}}</h2>
+<form [formGroup]="loginform">
+  <input type="email" placeholder="Enter email" formControlName="email"><br>
+  <span *ngIf="email?.invalid && email?.touched">email is required !!</span>
+  <br><br>
+  <input type="password" placeholder="Enter Password" formControlName="password">
+  <br><br>
+  <button>Login</button>
+
+</form>
