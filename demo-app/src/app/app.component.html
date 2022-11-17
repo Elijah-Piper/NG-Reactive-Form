@@ -1,11 +1,36 @@
-<h1> Hey !! I am reactive form !</h1>
 <h2>{{title}}</h2>
 <form [formGroup]="loginform">
+
+  <label>First name:</label>
+  <input type="name" placeholder="Enter first name" formControlName="firstName"><br>
+  <span class="error" *ngIf="errors.firstName">{{ errors.firstName }}</span>
+  <br><br>
+
+  <label>Last name:</label>
+  <input type="name" placeholder="Enter last name" formControlName="lastName"><br>
+  <span class="error" *ngIf="errors.lastName">{{ errors.lastName }}</span>
+  <br><br>
+
+  <label>Email:</label>
   <input type="email" placeholder="Enter email" formControlName="email"><br>
-  <span *ngIf="email?.invalid && email?.touched">email is required !!</span>
+  <span class="error" *ngIf="errors.email">{{ errors.email }}</span>
   <br><br>
-  <input type="password" placeholder="Enter Password" formControlName="password">
+
+  <label>Age:</label>
+  <input type="number" placeholder="Enter age" formControlName="age"><br>
+  <span class="error" *ngIf="errors.age">{{ errors.age }}</span>
   <br><br>
-  <button>Login</button>
+
+  <label>Phone Number:</label>
+  <input type="tel" placeholder="Enter phone number" formControlName="phoneNumber"><br>
+  <span class="error" *ngIf="errors.phoneNumber">{{ errors.phoneNumber }}</span>
+  <br><br>
+
+  <!-- <br><br> -->
+  <!-- <input type="password" placeholder="Enter Password" formControlName="password">
+  <span class="error" *ngIf="errors.password">{{ errors.password }}</span> -->
+  <!-- <br><br> -->
+  <button (click)="onSubmit()">Submit</button>
+  <p>is submitted: {{ submitted }}</p>
 
 </form>
